@@ -2,8 +2,8 @@ function flactomp3 {
   FFMETADATA="$(mktemp)"
   SAMPLEFILE="$(echo 01*.flac)"
   ffmpeg -i "$SAMPLEFILE" -f ffmetadata -y "$FFMETADATA"
-  ARTIST="$(sed -e 's/artist=\(.*\)/\1/Ip' --quiet $FFMETADATA)"
-  ALBUM="$(sed -e 's/album=\(.*\)/\1/Ip' --quiet $FFMETADATA)"
+  ARTIST="$(sed -e 's/^artist=\(.*\)/\1/Ip' --quiet $FFMETADATA)"
+  ALBUM="$(sed -e 's/^album=\(.*\)/\1/Ip' --quiet $FFMETADATA)"
   [[ "${ARTIST}${ALBUM}z" == "z" ]] && {
     echo "Both artist and album are empty. Exiting." 
     return ;
