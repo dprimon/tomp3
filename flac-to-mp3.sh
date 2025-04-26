@@ -17,7 +17,7 @@ function flactomp3 {
   echo Creating "$ARTIST - $ALBUM"
   mkdir -p "$ARTIST - $ALBUM"
   for f in *.flac; do 
-    ffmpeg -i "$f" -c:a libmp3lame -b:a 320k -map_metadata 0 "$ARTIST - $ALBUM/${f%.flac}.mp3"; 
+    ffmpeg -i "$f" -threads 1 -c:a libmp3lame -b:a 320k -map_metadata 0 "$ARTIST - $ALBUM/${f%.flac}.mp3"; 
   done
   cd "$ARTIST - $ALBUM" 
   rm $FFMETADATA
