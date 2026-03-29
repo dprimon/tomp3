@@ -2,13 +2,17 @@ The code consists in two functions.
 
 # Dependencies
 
-Packages like shntool, ffmpeg and flac are needed at minimum. In debian you can install them with: `$ sudo apt install shntool ffmpeg flac`.
+Packages like shntool, ffmpeg and flac are needed at minimum. In debian you can install them with: 
+
+`$ sudo apt install shntool ffmpeg flac`.
 
 You may also need a program to tag source music files. I personally like and use kid3.
 
 # Install
 
-Source the bash file in your shell like `$ . flac-to-mp3.sh`
+Source the bash file in your shell like 
+
+`$ . flac-to-mp3.sh`
 
 Available functions:
 
@@ -18,7 +22,9 @@ One to encode several audio files from a single album which are supposed to be t
 
 For example the following encodes flac files to a subdirectory which will contain encoded mp3s:
 
-## Example $ time tomp3 flac
+## Example 
+
+`$ time tomp3 flac`
 
 Note: the source files must be tagged and the filenames following the form `"<trackNumber> - Filename.<extension>"`. In the example, `<extension>`=flac. `time` is prepended to show total time of execution.
 
